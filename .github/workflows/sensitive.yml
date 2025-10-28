@@ -1,0 +1,18 @@
+name: "Sensitive workflow"
+on:
+  push:
+    branches:
+      - main
+
+# explicitly configure permissions, in case your GITHUB_TOKEN workflow permissions are set to read-only in repository settings
+permissions:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run"
+        run: |
+          echo "Hello, world! ${{ env.MY_SECRET }}"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}

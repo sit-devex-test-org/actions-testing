@@ -1,0 +1,20 @@
+name: "Test workflow"
+on:
+  issue_comment:
+    types: [created]
+  pull_request:
+    types: [opened,closed,synchronize]
+
+# explicitly configure permissions, in case your GITHUB_TOKEN workflow permissions are set to read-only in repository settings
+permissions:
+  actions: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Test"
+        run: |
+          echo "Hello, world!"
