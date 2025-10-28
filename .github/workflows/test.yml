@@ -14,11 +14,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment:
-      name: protected-main-env
     steps:
       - name: "Test"
         run: |
           echo "Hello, world!"
-        env:
-          MY_SECRET: ${{ secrets.MY_SECRET }}
