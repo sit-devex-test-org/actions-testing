@@ -10,7 +10,7 @@ permissions:
   actions: write
   contents: read
   pull-requests: write
-  id-tokens: write # Needed to federate tokens.
+  id-token: write # Needed to federate tokens.
 
 jobs:
   test:
